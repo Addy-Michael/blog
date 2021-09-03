@@ -4,10 +4,11 @@ import Link from "next/link";
 import matter from "gray-matter";
 import Layout from "../../../components/Layout";
 import Post from "../../../components/Post";
+import Pagination from "../../../components/Pagination";
 import { sortByDate } from "../../../utils";
 import { POSTS_PER_PAGE } from "../../../config/index";
 
-export default function BlogPage({ posts, numPage, currentPage }) {
+export default function BlogPage({ posts, numPages, currentPage }) {
   return (
     <Layout>
       <h1 className='text-5xl border-b-4 p-5 font-bold'>Blog</h1>
@@ -17,6 +18,8 @@ export default function BlogPage({ posts, numPage, currentPage }) {
           <Post key={index} post={post} />
         ))}
       </div>
+
+      <Pagination currentPage={currentPage} numPages={numPages} />
     </Layout>
   );
 }
