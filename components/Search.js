@@ -8,7 +8,7 @@ export default function Search() {
 
   useEffect(() => {
     const getResults = async () => {
-      if (searchTerm == " ") {
+      if (searchTerm == "") {
         setSearchResults([]);
       } else {
         const res = await fetch(`/api/search?q=${searchTerm}`);
